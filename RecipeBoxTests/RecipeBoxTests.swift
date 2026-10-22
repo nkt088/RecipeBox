@@ -35,6 +35,21 @@ struct RecipeBoxTests {
     }
 
     @Test
+    func rejectsRecipeWithoutRemoteImage() {
+        let recipe = APIRecipe(
+            id: "2",
+            title: "No image",
+            instructions: "Cook.",
+            imageURL: nil,
+            category: nil,
+            area: nil,
+            ingredients: []
+        )
+
+        #expect(!recipe.hasUsableImage)
+    }
+
+    @Test
     func favoritePreservesAPIRecipe() {
         let recipe = APIRecipe(
             id: "1",

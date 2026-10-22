@@ -33,9 +33,9 @@ struct MyRecipesView: View {
             .overlay {
                 if recipes.isEmpty {
                     ContentUnavailableView(
-                        "Нет собственных рецептов",
+                        "Рецептов нет",
                         systemImage: "book.closed",
-                        description: Text("Создайте первый рецепт кнопкой «плюс».")
+                        description: Text("Создайте первый рецепт кнопкой +")
                     )
                 }
             }

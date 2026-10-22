@@ -50,7 +50,7 @@ struct MealDBService {
         }
 
         let responseBody = try JSONDecoder().decode(MealResponse.self, from: data)
-        return responseBody.meals ?? []
+        return responseBody.meals?.filter(\.hasUsableImage) ?? []
     }
 }
 

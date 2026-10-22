@@ -21,7 +21,7 @@ struct BrowseView: View {
                         imageURL: recipe.imageURL,
                         subtitle: [recipe.category, recipe.area]
                             .compactMap { $0 }
-                            .joined(separator: " • ")
+                            .joined(separator: " - ")
                     )
                 }
             }

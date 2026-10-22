@@ -25,7 +25,7 @@ struct HomeView: View {
                             )
                         }
 
-                        Button("Сгенерировать новый", systemImage: "dice") {
+                        Button("Показать другой", systemImage: "dice") {
                             Task {
                                 await viewModel.generateRandomRecipe()
                             }

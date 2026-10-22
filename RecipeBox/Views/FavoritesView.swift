@@ -32,9 +32,9 @@ struct FavoritesView: View {
             .overlay {
                 if favorites.isEmpty {
                     ContentUnavailableView(
-                        "Нет понравившихся рецептов",
+                        "Рецептов нет",
                         systemImage: "heart",
-                        description: Text("Добавляйте рецепты с помощью кнопки с сердцем.")
+                        description: Text("Понравившиеся рецепты будут отображены тут")
                     )
                 }
             }

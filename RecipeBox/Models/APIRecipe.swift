@@ -16,6 +16,14 @@ struct APIRecipe: Codable, Equatable, Identifiable, Sendable {
     let area: String?
     let ingredients: [Ingredient]
 
+    var hasUsableImage: Bool {
+        guard let imageURL,
+              let scheme = imageURL.scheme?.lowercased() else {
+            return false
+        }
+        return scheme == "https" || scheme == "http"
+    }
+
     init(
         id: String,
         title: String,

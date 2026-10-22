@@ -12,22 +12,26 @@ struct ContentView: View {
         TabView {
             HomeView()
                 .tabItem {
-                    Label("Главная", systemImage: "house")
+                    Image(systemName: "house")
+                        .accessibilityLabel("Главная")
                 }
 
             BrowseView()
                 .tabItem {
-                    Label("Рецепты", systemImage: "magnifyingglass")
+                    Image(systemName: "magnifyingglass")
+                        .accessibilityLabel("Рецепты")
                 }
 
             FavoritesView()
                 .tabItem {
-                    Label("Понравившиеся", systemImage: "heart")
+                    Image(systemName: "heart")
+                        .accessibilityLabel("Понравившиеся")
                 }
 
             MyRecipesView()
                 .tabItem {
-                    Label("Мои рецепты", systemImage: "book")
+                    Image(systemName: "book")
+                        .accessibilityLabel("Мои рецепты")
                 }
         }
     }

@@ -29,6 +29,8 @@ struct RecipeRow: View {
                         .foregroundStyle(.secondary)
                 }
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.trailing, 8)
         }
     }
 }

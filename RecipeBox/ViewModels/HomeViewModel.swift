@@ -26,8 +26,11 @@ final class HomeViewModel {
         defer { isLoading = false }
 
         do {
-            recommendations = Array(try await service.recipes().prefix(8))
-            randomRecipe = try await service.randomRecipe()
+            async let loadedRecommendations = service.recipes()
+            async let loadedRandomRecipe = service.randomRecipe()
+
+            recommendations = Array(try await loadedRecommendations.prefix(8))
+            randomRecipe = try await loadedRandomRecipe
         } catch {
             errorMessage = error.localizedDescription
         }
