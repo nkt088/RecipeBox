@@ -12,7 +12,7 @@ import Testing
 struct RecipeBoxTests {
     @Test
     func decodesRecipeAndIngredients() throws {
-        let json = """
+        let json = Data("""
         {
           "idMeal": "52772",
           "strMeal": "Arrabiata",
@@ -25,7 +25,7 @@ struct RecipeBoxTests {
           "strIngredient2": "",
           "strMeasure2": ""
         }
-        """.data(using: .utf8)!
+        """.utf8)
 
         let recipe = try JSONDecoder().decode(APIRecipe.self, from: json)
 
@@ -47,6 +47,7 @@ struct RecipeBoxTests {
         )
 
         #expect(!recipe.hasUsableImage)
+        /// но не проверяет что изображение по адресу существует
     }
 
     @Test

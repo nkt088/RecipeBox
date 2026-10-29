@@ -8,6 +8,7 @@
 import Foundation
 
 struct MealDBService {
+    // swiftlint:disable:next force_unwrapping
     private let baseURL = URL(string: "https://www.themealdb.com/api/json/v1/1/")!
 
     func searchRecipes(query: String) async throws -> [APIRecipe] {
